@@ -663,7 +663,7 @@ h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
 
 
 .main{
-    background-position: center center;
+    background-position: center top;
     background-size: cover;
     height: auto;
     left: 0;
@@ -734,9 +734,11 @@ h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.33);
     margin-top: 150px;
     z-index: 3;
+    font-family: 'Lato', sans-serif;
+
 }
 .main .logo.cursive{
-    font-family: 'Grand Hotel',cursive;
+    font-family: 'Lobster', cursive;
     font-size: 82px;
     
 }
@@ -745,6 +747,7 @@ h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
     z-index: 4;
 }
 .main .motto{
+    font-family: 'Nova Mono', monospace;
     min-height: 140px;
 }
 .main .motto, .main .subscribe .info-text{
