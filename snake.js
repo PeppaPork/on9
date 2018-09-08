@@ -22,9 +22,9 @@ function updateSnakeArea() {
     //check touch input
     if (snakeArea.x && snakeArea.y) {
         if (UpBtn.clicked() && snake[0].direction != 2) { snake[0].direction = 0; }
-        else if (DownBtn.clicked() && snake[0].direction != 0) { snake[0].direction = 2; }
-        else if (LeftBtn.clicked() && snake[0].direction != 1) { snake[0].direction = 3; }
-        else if (RightBtn.clicked() && snake[0].direction != 3) { snake[0].direction = 1; }
+        if (DownBtn.clicked() && snake[0].direction != 0) { snake[0].direction = 2; }
+        if (LeftBtn.clicked() && snake[0].direction != 1) { snake[0].direction = 3; }
+        if (RightBtn.clicked() && snake[0].direction != 3) { snake[0].direction = 1; }
     }
     //game algro
     updateSnake();
