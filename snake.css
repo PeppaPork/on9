@@ -2,4 +2,7 @@ canvas {
     border: 5px dashed #85144b;
     background-color: #001f3f;
     border-radius: 5px;
+    padding: 0;
+    margin: auto;
+    display: block;
 }

@@ -15,9 +15,9 @@ function updateSnakeArea() {
     //check keyboard input
     if (snakeArea.key) {
         if (snakeArea.key == 37 && snake[0].direction != 1) { snake[0].direction = 3; }
-        else if (snakeArea.key == 39 && snake[0].direction != 3) { snake[0].direction = 1; }
-        else if (snakeArea.key == 38 && snake[0].direction != 2) { snake[0].direction = 0; }
-        else if (snakeArea.key == 40 && snake[0].direction != 0) { snake[0].direction = 2; }
+        if (snakeArea.key == 39 && snake[0].direction != 3) { snake[0].direction = 1; }
+        if (snakeArea.key == 38 && snake[0].direction != 2) { snake[0].direction = 0; }
+        if (snakeArea.key == 40 && snake[0].direction != 0) { snake[0].direction = 2; }
     }
     //check touch input
     if (snakeArea.x && snakeArea.y) {
@@ -94,7 +94,8 @@ var snakeArea = {
         this.canvas.width = 300;
         this.canvas.height = 480;
         this.context = this.canvas.getContext("2d");
-        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        postion = document.getElementById("snakeGame"); 
+        postion.insertBefore(this.canvas, postion.childNodes[0]);
         this.interval = setInterval(updateSnakeArea, 100);
         //keyboard control
         window.addEventListener('keydown', function (e) {
