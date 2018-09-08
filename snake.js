@@ -25,7 +25,7 @@ function updateSnakeArea() {
 
 function updateSnake() {
     if (snake.length > 0) {
-        snake.unshift(snake[0].assign());
+        snake.unshift(Object.assign({},snake[0]));
         if (!ateFood) {
             snake.pop();
         }
