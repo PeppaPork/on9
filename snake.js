@@ -1,18 +1,18 @@
 function startGame() {
     snake = [new component(20, 20, "#01FF70", 140, 100, 0)];
     food = new component(20, 20, "#FF4136", 140, 140, 0);
-    var ateFood = false;
-    var score = 0;
+    ateFood = false;
+    score = 0;
     snakeArea.start();
     genFood();
 }
 
 function updateSnakeArea() {
     //check input
-    if (snakeArea.key && snakeArea.key == 37 && snakeHead.direction != 1) { snakeHead.direction = 3; }
-    else if (snakeArea.key && snakeArea.key == 39 && snakeHead.direction != 3) { snakeHead.direction = 1; }
-    else if (snakeArea.key && snakeArea.key == 38 && snakeHead.direction != 2) { snakeHead.direction = 0; }
-    else if (snakeArea.key && snakeArea.key == 40 && snakeHead.direction != 0) { snakeHead.direction = 2; }
+    if (snakeArea.key && snakeArea.key == 37 && snake[0].direction != 1) { snake[0].direction = 3; }
+    else if (snakeArea.key && snakeArea.key == 39 && snake[0].direction != 3) { snake[0].direction = 1; }
+    else if (snakeArea.key && snakeArea.key == 38 && snake[0].direction != 2) { snake[0].direction = 0; }
+    else if (snakeArea.key && snakeArea.key == 40 && snake[0].direction != 0) { snake[0].direction = 2; }
     updateSnake();
     checkCrash();
     checkFood();
@@ -34,7 +34,7 @@ function updateSnake() {
 }
 
 function checkCrash() {
-    if (snakeHead.x < 0 || snakeHead.x > 280 || snakeHead.y < 0 || snakeHead.y > 220) {
+    if (snake[0].x < 0 || snake[0].x > 280 || snake[0].y < 0 || snake[0].y > 220) {
         return gameOver();
     }
     for (key in snake) {
