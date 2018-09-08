@@ -1,6 +1,6 @@
 function startGame() {
-    var snake = [new component(20, 20, "#01FF70", 140, 100, 0)];
-    var food = new component(20, 20, "#FF4136", 140, 140, 0);
+    snake = [new component(20, 20, "#01FF70", 140, 100, 0)];
+    food = new component(20, 20, "#FF4136", 140, 140, 0);
     var ateFood = false;
     var score = 0;
     snakeArea.start();
