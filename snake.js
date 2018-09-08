@@ -4,7 +4,6 @@ function startGame() {
     ateFood = false;
     score = 0;
     snakeArea.start();
-    genFood();
 }
 
 function updateSnakeArea() {
@@ -14,11 +13,11 @@ function updateSnakeArea() {
     else if (snakeArea.key && snakeArea.key == 38 && snake[0].direction != 2) { snake[0].direction = 0; }
     else if (snakeArea.key && snakeArea.key == 40 && snake[0].direction != 0) { snake[0].direction = 2; }
     updateSnake();
-    checkCrash();
+    if (checkCrash()) { snakeArea.stop();  return; }
     checkFood();
     snakeArea.clear();
-    for (i = 0; i < snake.length; i += 1) {
-        snake[i].update();
+    for (key in snake) {
+        snake[key].update();
     }
     food.update();
 }
@@ -34,12 +33,13 @@ function updateSnake() {
 }
 
 function checkCrash() {
+    console.log("checkCrash");
     if (snake[0].x < 0 || snake[0].x > 280 || snake[0].y < 0 || snake[0].y > 220) {
-        return gameOver();
+        return true;
     }
     for (key in snake) {
-        if (key !==0 && snake[0].x == snake[key].x && snake[0].y == snake[key].y) {
-            return gameOver();
+        if (key !=0 && snake[0].x == snake[key].x && snake[0].y == snake[key].y) {
+            return true;
         }
     }
 }
@@ -65,11 +65,6 @@ function genFood() {
             genFood();
         }
     }
-}
-
-function gameOver() {
-    snakeArea.stop();
-    return;
 }
 
 var snakeArea = {
