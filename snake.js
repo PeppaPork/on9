@@ -2,10 +2,10 @@ function startGame() {
     snake = [new component(20, 20, "#01FF70", 140, 100, 0)];
     food = new component(20, 20, "#FF4136", 140, 140, 0);
     wall = new component(300, 10, "85144b", 0, 240, 0);
-    UpBtn = new component(40, 40, "#7FDBFF ", 130, 300);
-    DownBtn = new component(40, 40, "#7FDBFF", 130, 380);
-    LeftBtn = new component(40, 40, "#7FDBFF", 90, 340);
-    RightBtn = new component(40, 40, "#7FDBFF", 170, 340); 
+    UpBtn = new component(100, 115, "#7FDBFF", 100, 250);
+    DownBtn = new component(100, 115, "#0074D9", 100, 365);
+    LeftBtn = new component(100, 230, "#3D9970", 0, 250);
+    RightBtn = new component(100, 230, "#3D9970", 200, 250); 
     ateFood = false;
     score = 0;
     snakeArea.start();
