@@ -16,7 +16,7 @@
 
     <script>
         function runOCR(url) {
-                Tesseract.recognize(url, {lang: 'chi_tra'})
+                Tesseract.recognize(url, {lang: 'en'})
                     .then(function (result) {
                         document.getElementById("ocr_results")
                             .innerText = result.text;
